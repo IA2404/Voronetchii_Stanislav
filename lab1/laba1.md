@@ -1,4 +1,6 @@
 # Лабораторная работа №1. Введение в JavaScript
+## Group: IA2404
+## Student: Stanislav Voronetchii
 
 ## Цель работы
 
