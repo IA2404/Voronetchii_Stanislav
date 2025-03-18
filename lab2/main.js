@@ -34,9 +34,9 @@ function calculateTotalAmountByDate(transactions, year, month, day) {
     let total = 0;
     transactions.forEach(transaction => {
         const [transactionYear, transactionMonth, transactionDay] = transaction.transaction_date.split('-');
-        const yearMatch = !year || transactionYear === year;
-        const monthMatch = !month || transactionMonth === month;
-        const dayMatch = !day || transactionDay === day;
+        const yearMatch = !year || transactionYear === year.toString();
+        const monthMatch = !month || transactionMonth === month.toString().padStart(2, '0');
+        const dayMatch = !day || transactionDay === day.toString().padStart(2, '0');
 
         if (yearMatch && monthMatch && dayMatch) {
             total += transaction.transaction_amount;

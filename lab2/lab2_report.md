@@ -302,6 +302,17 @@ function mapTransactionDescriptions(transactions) {
 - Пустой массив (`zeroTransactions`).
 - Массив с одной транзакцией (`oneTransaction`).
 
+# Вывод:
+
+Тестирование всех функций
+![1.png](screenshots/1.png)
+![2.png](screenshots/2.png)
+![3.png](screenshots/3.png)
+![4.png](screenshots/4.png)
+![5.png](screenshots/5.png)
+
+Extra задания с пустым массивом и одной транзакцией в массиве:
+![extra.png](screenshots/extra.png)
 
 ### Контрольные вопросы
 1. Какие методы массивов можно использовать для обработки объектов в JavaScript?
