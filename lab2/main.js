@@ -1,11 +1,11 @@
 import {transactions} from "./files/transactions.js";
-const zeroTransactions = []; // Пустой массив транзакций
+const zeroTransactions = [];
 const oneTransaction = [transactions[0]];
 
 /**
  * Возвращает массив уникальных типов транзакций
  * @param {Array} transactions - массив транзакций
- * @returns {Set} - массив уникальных типов транзакций
+ * @returns {Set} - мас сив уникальных типов транзакций
  */
 function getUniqueTransactionTypes(transactions) {
     return new Set(transactions.map(transaction => transaction.transaction_type));
