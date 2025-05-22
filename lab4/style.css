@@ -65,7 +65,6 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Стили для таблицы */
 .transactions-container {
     margin-bottom: 20px;
 }
@@ -109,7 +108,6 @@ th {
     background-color: #d32f2f;
 }
 
-/* Стили для блока с полным описанием */
 .transaction-details {
     padding: 15px;
     background-color: #f9f9f9;
@@ -125,7 +123,6 @@ th {
     min-height: 100px;
 }
 
-/* Стили для общей суммы */
 .total-container {
     text-align: center;
     margin-bottom: 20px;
@@ -139,7 +136,6 @@ th {
     font-weight: bold;
 }
 
-/* Стиль для кликабельных строк таблицы */
 #transactions-body tr {
     cursor: pointer;
     transition: background-color 0.2s;
