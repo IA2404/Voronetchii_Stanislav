@@ -225,7 +225,6 @@ async function searchWeather() {
         showError('Город не найден. Пожалуйста, проверьте название и попробуйте снова.');
         console.error('Ошибка поиска погоды:', error);
     } finally {
-        // Скрываем индикатор загрузки
         showLoading(false);
     }
 }
