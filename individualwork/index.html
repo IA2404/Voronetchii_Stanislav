@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow - Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>WeatherNow</h1>
+        <p>Актуальная погода в любой точке мира</p>
+    </div>
+</header>
+
+<div class="container">
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Введите название города..." id="city-input">
+            <button class="search-button" id="search-button">Найти</button>
+        </div>
+        <div class="error-message" id="error-message">Город не найден. Пожалуйста, проверьте название и попробуйте снова.</div>
+    </section>
+
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Загрузка данных о погоде...</p>
+    </div>
+
+    <section class="weather-section" id="weather-section">
+        <div class="weather-card">
+            <div class="location-info">
+                <h2 id="city-name">Москва</h2>
+                <p id="current-date">Вторник, 20 мая 2025</p>
+            </div>
+
+            <div class="current-weather">
+                <div class="temperature" id="current-temp">22°C</div>
+                <div class="weather-icon" id="weather-icon">☀️</div>
+            </div>
+
+            <p class="weather-description" id="weather-description">Ясно</p>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <h3>Ощущается как</h3>
+                    <p id="feels-like">24°C</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Влажность</h3>
+                    <p id="humidity">45%</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Ветер</h3>
+                    <p id="wind">3 м/с</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Давление</h3>
+                    <p id="pressure">1013 гПа</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-section">
+            <h2 class="forecast-title">Прогноз на 7 дней</h2>
+            <div class="forecast-cards" id="forecast-container">
+<!--                место для карточек с погодой-->
+            </div>
+        </div>
+    </section>
+</div>
+<br>
+<br>
+<script src="app.js"></script>
+</body>
+</html>
