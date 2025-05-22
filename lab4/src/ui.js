@@ -4,7 +4,6 @@
 import { formatDate, getShortenedDescription, formatAmount } from './utils.js';
 import { removeTransaction, getTransactionById, calculateTotal } from './transactions.js';
 
-// Получаем ссылки на элементы DOM
 const transactionsTable = document.getElementById('transactions-table');
 const transactionsBody = document.getElementById('transactions-body');
 const totalAmount = document.getElementById('total-amount');
@@ -19,14 +18,12 @@ export function createTransactionRow(transaction) {
     const row = document.createElement('tr');
     row.dataset.id = transaction.id;
 
-    // Устанавливаем класс строки в зависимости от категории и суммы
     if (transaction.category === 'Доход') {
         row.classList.add('positive');
     } else {
         row.classList.add('negative');
     }
 
-    // Создаем ячейки таблицы
     row.innerHTML = `
     <td>${formatDate(transaction.date)}</td>
     <td>${transaction.category}</td>
@@ -55,7 +52,6 @@ export function updateTotal() {
     const total = calculateTotal();
     totalAmount.textContent = formatAmount(total);
 
-    // Меняем цвет в зависимости от баланса
     if (total > 0) {
         totalAmount.style.color = '#2e7d32';
     } else if (total < 0) {
@@ -108,30 +104,24 @@ export function removeTransactionFromTable(id) {
  * Инициализирует обработчики событий
  */
 export function initEventHandlers() {
-    // Обработчик клика по таблице (делегирование событий)
     transactionsTable.addEventListener('click', (event) => {
-        // Если нажата кнопка удаления
         if (event.target.classList.contains('delete-btn')) {
             const id = event.target.dataset.id;
             if (removeTransaction(id)) {
                 removeTransactionFromTable(id);
             }
-            // Останавливаем всплытие, чтобы не сработал клик по строке
             event.stopPropagation();
         }
-        // Если нажата строка таблицы (но не заголовок)
         else if (event.target.closest('tr') && event.target.closest('tbody')) {
             const row = event.target.closest('tr');
             const id = row.dataset.id;
 
-            // Выделяем активную строку
             const activeRow = transactionsBody.querySelector('tr.active');
             if (activeRow) {
                 activeRow.classList.remove('active');
             }
             row.classList.add('active');
 
-            // Отображаем детали транзакции
             showTransactionDetails(id);
             transactionDetails.dataset.id = id;
         }
